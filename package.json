@@ -1,8 +1,9 @@
 {
   "name": "cloudflare-docker-proxy",
   "private": true,
-  "description": "",
+  "description": "Docker Registry proxy running on Cloudflare Workers",
   "version": "1.0.0",
+  "type": "module",
   "packageManager": "yarn@1.22.22",
   "author": "ciiiii <allen.cccccnm@gmail.com>",
   "dependencies": {},
@@ -15,6 +16,7 @@
   "scripts": {
     "format": "prettier --write '**/*.{js,css,json,md}'",
     "build": "webpack",
+    "test": "node --test",
     "dev": "wrangler dev src/index.js --env dev"
   },
   "license": "MIT",

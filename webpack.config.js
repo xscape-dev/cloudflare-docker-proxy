@@ -1,19 +1,14 @@
-const path = require("path");
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
-module.exports = {
-  context: path.resolve(__dirname, "./"),
+const dirname = path.dirname(fileURLToPath(import.meta.url));
+
+export default {
+  context: dirname,
   target: "webworker",
   mode: "production",
-  optimization: {
-    usedExports: true,
-  },
+  optimization: { usedExports: true },
   module: {
-    rules: [
-      {
-        include: /node_modules/,
-        test: /\.mjs$/,
-        type: "javascript/auto",
-      },
-    ],
+    rules: [{ include: /node_modules/, test: /\.mjs$/, type: "javascript/auto" }],
   },
 };
